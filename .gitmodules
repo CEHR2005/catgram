@@ -1,0 +1,6 @@
+[submodule "catgram-backend"]
+	path = catgram-backend
+	url = https://github.com/CEHR2005/catgram-backend.git
+[submodule "catgram-frontend"]
+	path = catgram-frontend
+	url = https://github.com/CEHR2005/catstagram.git

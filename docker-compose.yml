@@ -1,0 +1,26 @@
+version: "3"
+services:
+  backend:
+    build: ./catgram-backend
+    ports:
+      - "3001:3000"
+    volumes:
+      - /usr/src/app/node_modules
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/catstagram
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./catgram-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+volumes:
+  mongo-data:
